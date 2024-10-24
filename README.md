@@ -35,7 +35,7 @@ $ docker-compose build
 ```sh
 $ mkdir app
 ```
-2. Обновление Composer 
+2. Создать Laravel проект
 ```sh
 $ docker-compose run --rm composer create-project --prefer-dist laravel/laravel .
 ```

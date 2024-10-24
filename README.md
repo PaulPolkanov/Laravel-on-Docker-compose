@@ -8,7 +8,7 @@ Start Laravel Aplication on Docker compose with NGINX , MariaDb , Composer and p
 
 ## Технологии
 - PHP 8.3
-- Laravel 11
+- Laravel
 - MariyaDB
 - NGINX
 - Composer

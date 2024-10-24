@@ -3,6 +3,7 @@ Start Laravel Aplication on Docker compose with NGINX , MariaDb , Composer and p
 ## Содержание
 - [Технологии](#технологии)
 - [Установка и запуск](#установка)
+- [Database](#database)
 - [Другое](#другое)
 
 ## Технологии
@@ -12,6 +13,7 @@ Start Laravel Aplication on Docker compose with NGINX , MariaDb , Composer and p
 - NGINX
 - Composer
 - phpMyAdmin
+- Docker compose
 
 ## Установка
 
@@ -27,7 +29,7 @@ $ cd adat-laravel
 ```sh
 $ git checkout develop
 ```
-
+## Запуск
 3. Build docker-compose
 ```sh
 $ docker-compose build
@@ -43,7 +45,7 @@ $ cd ..
 ```php
 DB_CONNECTION=mysql
 DB_HOST=db
-DB_PORT=3306
+DB_PORT=3307
 DB_MASTERBASE=aftermarketdata
 DB_DATABASE=laravel
 DB_USERNAME=you_user
@@ -68,6 +70,12 @@ $ docker-compose exec app php artisan migrate
 9. Доступ в приложение 
 `http://localhost:8080/`
 
+## Database
+
+0. Использование и управление базы данных в console
+```sh
+$ docker-compose exec db mariadb -h db -u root -p
+```
 
 ## Другое 
 

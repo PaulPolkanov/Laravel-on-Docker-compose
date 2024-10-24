@@ -31,11 +31,15 @@ $ git clone < https/ssh > .
 ```sh
 $ docker-compose build
 ```
-1. Обновление Composer 
+1. Создание папки для Laravel
+```sh
+$ mkdir app
+```
+2. Обновление Composer 
 ```sh
 $ docker-compose run --rm composer create-project --prefer-dist laravel/laravel .
 ```
-2. Задать параметры для BD
+3. Задать параметры для BD
 ```php
 DB_CONNECTION=mysql
 DB_HOST=db
@@ -44,19 +48,19 @@ DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=root
 ```
-3. Запуск контейнера
+4. Запуск контейнера
 ```sh
 $ docker-compose up -d
 ```
-4. Check Permissions
+5. Check Permissions
 ```sh
 $ docker-compose exec app chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 ```
-5. Запуск миграций
+6. Запуск миграций
 ```sh
 $ docker-compose exec app php artisan migrate
 ```
-6. Доступ в приложение 
+7. Доступ в приложение 
 `http://localhost:8090/`
 
 ## Database

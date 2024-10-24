@@ -2,7 +2,8 @@
 Start Laravel Aplication on Docker compose with NGINX , MariaDb , Composer and phpMyAdmin
 ## Содержание
 - [Технологии](#технологии)
-- [Установка и запуск](#установка)
+- [Установка](#установка)
+- [Запуск](#запуск)
 - [Database](#database)
 - [Другое](#другое)
 
@@ -23,45 +24,29 @@ $ git clone < https/ssh >
 ```
 1. Переход в дерикторию
 ```sh
-$ cd adat-laravel
-```
-2. Переход на ветку develop
-```sh
-$ git checkout develop
+$ cd < name dir >
 ```
 ## Запуск
-3. Build docker-compose
+2. Build docker-compose
 ```sh
 $ docker-compose build
 ```
-4. Set Up Environment File
-Перейти в app и скопировать .env.example и в .env
+3. Обновление Composer 
 ```sh
-$ cd app/
-$ cp .env.example .env
-$ cd ..
+$ docker-compose run --rm composer create-project --prefer-dist laravel/laravel 
 ```
-5. Задать параметры для BD
+4. Задать параметры для BD
 ```php
 DB_CONNECTION=mysql
 DB_HOST=db
-DB_PORT=3307
-DB_MASTERBASE=aftermarketdata
+DB_PORT=3306
 DB_DATABASE=laravel
-DB_USERNAME=you_user
-DB_PASSWORD=secret
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
 ```
 6. Запуск контейнера
 ```sh
 $ docker-compose up -d
-```
-7. Обновление Composer 
-```sh
-$ docker-compose run --rm composer update
-```
-8. Генерируем ключ для Laravel Application
-```sh
-$ docker-compose exec app php artisan key:generate
 ```
 8. Запуск миграций
 ```sh
